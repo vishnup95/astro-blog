@@ -1,0 +1,21 @@
+---
+import Hamburger from './Hamburger.astro';
+import Navigation from './Navigation.astro';
+---
+
+<style>
+	.header-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+</style>
+
+<header>
+	<div class="header-wrapper">
+		<h1>My Astro Site!</h1>
+		<Hamburger />
+		<Navigation />
+	</div>
+</header>

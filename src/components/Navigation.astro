@@ -1,0 +1,63 @@
+---
+---
+
+<style>
+	.nav-menu {
+		display: none;
+		/* width: 100%; */
+		top: 5rem;
+		left: 48px;
+
+		display: none;
+		margin: 0;
+	}
+
+	.nav-menu__list {
+		list-style-type: none;
+		display: flex;
+		gap: 14px;
+		padding-left: 0;
+	}
+
+	.nav-menu__list-item a {
+		text-transform: uppercase;
+		background-color: #ff9776;
+		padding: 10px 8px;
+		border-radius: 6px;
+		text-decoration: none;
+	}
+
+	.nav-menu__list-item a:hover {
+		color: blueviolet;
+	}
+
+	.expanded {
+
+		display: unset;
+		background-color: #ff9776;
+		width: 100%;
+		border-radius: 6px;
+		padding: 8px 16px;
+	}
+
+	@media screen and (min-width: 638px) {
+		.nav-menu {
+			display: block;
+		}
+	}
+</style>
+
+<nav class="nav-menu">
+	<ul class="nav-menu__list">
+		<li class="nav-menu__list-item"><a href="/">Home</a></li>
+		<li class="nav-menu__list-item">
+			<a href="/about">About</a>
+		</li>
+		<li class="nav-menu__list-item">
+			<a href="/blog">Blog</a>
+		</li>
+		<li class="nav-menu__list-item">
+			<a href="/tag">Blog Tags</a>
+		</li>
+	</ul>
+</nav>

@@ -1,0 +1,18 @@
+---
+import BlogPost from '../components/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/styles.css';
+
+// top level await! ES6 ftw
+const allBlogs = await Astro.glob('../pages/posts/*.md');
+---
+
+<BaseLayout pageTitle="Blog Page">
+	<ul style="padding-top: 15px;">
+		{
+			allBlogs.map((blogs) => (
+				<BlogPost url={blogs.url} title={blogs.frontmatter.title} />
+			))
+		}
+	</ul>
+</BaseLayout>

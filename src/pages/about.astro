@@ -1,0 +1,61 @@
+---
+import '../styles/styles.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+type Identity = {
+	name: string;
+	place: string;
+	occupation: string;
+	work: string;
+	hobbies: string[];
+	skills: string[];
+};
+
+const identity: Identity = {
+	name: 'Vishnu',
+	place: 'Kochi',
+	occupation: 'Frontend Developer',
+	work: 'Ditto',
+	hobbies: ['football', 'cooking'],
+	skills: ['HTML', 'CSS', 'JS', 'React', 'Astro'],
+};
+
+const join = (n: string[]) => n.join(', ');
+const hobbiesColor = 'purple';
+const fontWeight = 400;
+const textCase = 'uppercase';
+---
+
+<style
+	define:vars={{
+		hobbiesColor,
+		fontWeight,
+		textCase,
+	}}
+>
+	h1 {
+		color: red;
+		font-size: 2rem;
+	}
+	.list-value {
+		color: var(--hobbiesColor);
+		text-transform: var(--textCase);
+		font-weight: var(--fontWeight);
+	}
+</style>
+<BaseLayout pageTitle={'About Page'}>
+	{
+		Object.entries(identity).map(([key, value]) => {
+			// no autocomplete here. Why?
+			const isArray = typeof value === 'object';
+			return (
+				<div>
+					{key} :{' '}
+					<span class={isArray ? 'list-value' : 'individual'}>
+						{isArray ? value.join(', ') : value}
+					</span>
+				</div>
+			);
+		})
+	}
+</BaseLayout>
