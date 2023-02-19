@@ -1,0 +1,22 @@
+:root {
+	--shadow-color: 30deg 3% 59%;
+
+	--shadow-elevation-medium: -0.1px 0.2px 0.2px hsl(var(--shadow-color) / 0.46),
+		-0.3px 0.6px 0.7px -1px hsl(var(--shadow-color) / 0.42),
+		-0.8px 1.6px 1.9px -2px hsl(var(--shadow-color) / 0.38),
+		-2.1px 3.9px 4.7px -3px hsl(var(--shadow-color) / 0.34);
+}
+
+.greetingContainer {
+	background-color: #fff;
+	padding: 10px 12px;
+	border: 1px solid #eee;
+	border-radius: 6px;
+	box-shadow: var(--shadow-elevation-medium);
+}
+
+.greetingText {
+	font-size: 24px;
+	font-weight: 600;
+	color: rgb(128, 128, 75);
+}

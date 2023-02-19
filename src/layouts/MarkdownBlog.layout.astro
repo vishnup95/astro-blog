@@ -3,14 +3,15 @@ import BaseLayout from './BaseLayout.astro';
 
 const { frontmatter } = Astro.props;
 const { tags } = frontmatter;
+console.log();
 ---
 
 <BaseLayout pageTitle="Blog">
 	<article class="article-blog">
 		<h2>{frontmatter.title}</h2>
-		<p>{frontmatter.pubDate.slice(0, 10)}</p>
+		<p>{frontmatter.pubDate.toDateString()}</p>
 		<p><em>{frontmatter.description}</em></p>
-		<p>Written by: {frontmatter.author}</p>
+		<p class="author">Written by: {frontmatter.author}</p>
 		<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 		<div class="tags">
 			{
@@ -25,7 +26,7 @@ const { tags } = frontmatter;
 	</article>
 </BaseLayout>
 
-<style is:inline>
+<style>
 	.article-blog {
 		background-color: #f9f9fa;
 		padding: 10px;

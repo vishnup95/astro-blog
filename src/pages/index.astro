@@ -1,8 +1,10 @@
 ---
+import UserGreeting from '../components/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/styles.css';
 ---
 
 <BaseLayout pageTitle="Home Page">
 	<span> What happens when I edit the top lines? Why do we need those?</span>
+	<UserGreeting client:load messages={['Hej', 'Hallo', 'Hola', 'Habari']} />
 </BaseLayout>

@@ -1,5 +1,4 @@
 ---
-layout: '../../layouts/MarkdownBlog.layout.astro'
 title: My new blog post
 author: Vishnu
 description: 'New learnings in Astro!'
@@ -14,4 +13,4 @@ tags: ['astro', 'learning in public', 'setbacks', 'community']
 
 We talk about how easy Astro makes it to add new blog posts dynamically. We will see integrations with frameworks and mdx integration to make out life easier
 
-_____________________________________________________________________________________________________________________
+---
